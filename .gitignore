@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+Frontend/node_modules/
+Backend/node_modules/
+
+# Builds
+dist/
+Frontend/dist/
+Backend/dist/
+
+# Env files — never commit secrets
+.env
+.env.local
+.env.*.local
+Backend/.env
+Frontend/.env
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/

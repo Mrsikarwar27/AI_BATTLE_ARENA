@@ -1,19 +1,34 @@
 import express from 'express';
 import runGraph from "./ai/graph.ai.js"
 import cors from "cors"
+import cookieParser from "cookie-parser"
+import helmet from "helmet"
+import config from "./config/config.js";
+import authRoutes from "./routes/auth.routes.js";
+import conversationRoutes from "./routes/conversations.routes.js";
 
 const app = express();
+app.use(helmet())
 app.use(express.json())
+app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"],
+    origin: config.FRONTEND_URL || "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
 }))
+
+app.use("/api/auth", authRoutes);
+app.use("/api/conversations", conversationRoutes);
 
 
 app.get('/', (req, res) => {
     // Lightweight health check. Do NOT call runGraph here — every call
     // burns Mistral/Cohere/Gemini quota and triggers 429 rate limits.
+    res.json({ status: "ok", service: "ai-battle-arena-backend" })
+})
+
+app.get('/api/health', (req, res) => {
     res.json({ status: "ok", service: "ai-battle-arena-backend" })
 })
 
