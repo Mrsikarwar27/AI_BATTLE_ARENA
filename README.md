@@ -1,6 +1,3 @@
-<img width="1366" height="653" alt="image" src="https://github.com/user-attachments/assets/4c6c166b-8581-4490-9af3-4b598bdda65a" />
-<img width="1366" height="653" alt="image" src="https://github.com/user-attachments/assets/a010b197-0549-49e0-8568-78d666d1940a" />
-<img width="1366" height="653" alt="image" src="https://github.com/user-attachments/assets/96e83a33-350c-41a3-bc32-b497566baa55" />
 
 # ⚔️ AI Chat Arena
 
