@@ -19,7 +19,7 @@ app.use(helmet())
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: config.FRONTEND_URL || "http://localhost:5173 || https://ai-battle-arena-ll31.onrender.com/",
+    origin: config.FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,

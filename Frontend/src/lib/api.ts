@@ -9,7 +9,7 @@ import type {
   User,
 } from '@/types'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'https://ai-battle-arena-ll31.onrender.com'
 
 const TOKEN_KEY = 'aba_token'
 

@@ -16,7 +16,7 @@ const config = {
     JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '7d',
     PORT: Number(process.env.PORT || 3000),
     NODE_ENV: process.env.NODE_ENV || 'development',
-    FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:5173',
+    FRONTEND_URL: process.env.FRONTEND_URL || 'https://ai-battle-arena-ll31.onrender.com',
 }
 
 export default config;
