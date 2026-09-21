@@ -560,7 +560,7 @@ export default function Home() {
       <footer className="w-full py-8 border-t border-outline-variant/30">
         <div className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 max-w-6xl mx-auto gap-3">
           <div className="text-on-surface-variant/60 text-sm">
-            &copy; 2024–2026 AI Battle Arena
+            &copy; 2026 AI Battle Arena
           </div>
           <div className="flex items-center gap-2 text-on-surface-variant/40">
             <span className="font-mono text-xs">SYSTEM STABLE</span>
