@@ -1,6 +1,8 @@
 import express from 'express';
 import runGraph from "./ai/graph.ai.js"
 import cors from "cors"
+import path from "path"
+import { fileURLToPath } from 'url';
 import cookieParser from "cookie-parser"
 import helmet from "helmet"
 import config from "./config/config.js";
@@ -8,6 +10,11 @@ import authRoutes from "./routes/auth.routes.js";
 import conversationRoutes from "./routes/conversations.routes.js";
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(helmet())
 app.use(express.json())
 app.use(cookieParser())
@@ -27,6 +34,13 @@ app.get('/', (req, res) => {
     // burns Mistral/Cohere/Gemini quota and triggers 429 rate limits.
     res.json({ status: "ok", service: "ai-battle-arena-backend" })
 })
+
+//wildcard route to serve the frontend for any other route
+app.get('*any', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
+
 
 app.get('/api/health', (req, res) => {
     res.json({ status: "ok", service: "ai-battle-arena-backend" })
