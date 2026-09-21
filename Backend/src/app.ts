@@ -10,6 +10,7 @@ import authRoutes from "./routes/auth.routes.js";
 import conversationRoutes from "./routes/conversations.routes.js";
 
 const app = express();
+app.set('trust proxy', 1);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
